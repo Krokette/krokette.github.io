@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Pipboy application</title>
+    <title>Pipboy application - Dev</title>
 </head>
 
 <body>
@@ -18,13 +18,13 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="navbar-item active">
                     <a href="dev.html" class="nav-link">DEV</a>
                 </li>
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">STAT</a>
                 </li>
-                <li class="navbar-item active">
+                <li class="nav-item">
                     <a href="inv.html" class="nav-link">INV</a>
                 </li>
                 <li class="nav-item">
@@ -42,35 +42,36 @@
 
     <ul class="nav nav-tabs">
         <li class="nav-item">
-			<a href="#weapons" class="nav-link" data-toggle="tab" role="tab">
-                            WEAPONS
-                        </a>
+			<a href="#projects" class="nav-link" data-toggle="tab" role="tab">
+                            PROJECTS
+            </a>
         </li>
         <li class="nav-item">
             <a href="#special" class="nav-link" data-toggle="tab">
                             AID
-                        </a>
+            </a>
         </li>
         <li class="nav-item">
             <a href="#perks" class="nav-link" data-toggle="tab">
                             ARMOR
-                        </a>
+            </a>
         </li>
     </ul>
 
     <div class="tab-content">
-		<div class="tab-pane active full" id="weapons" role="tabpanel">
-            
+		<div class="tab-pane active full" id="projects" role="tabpanel">
+
             <div class="center-image weapons">
-                <img class="container" id="img-1" src="img/pic1.png">
+                <a href="https://krokette.github.io/image-comparator/index.html">
+                    <img class="container" id="img-1" src="img/image-comparator-text.jpg">
+                </a>
                 <img class="container" id="img-2" src="img/pic2.png">
                 <img class="container" id="img-3" src="img/pic3.png">
             </div>
             
             <ul class="item-list">
-                <li><a href="#" class="44_pistol btn active" data-rel="#img-1">.44 Pistol</a></li>
+                <li><a href="#" class="image-comparator btn active" data-rel="#img-1">Image Comparator</a></li>
                 <li><a href="#" class="10mm_pistol btn " data-rel="#img-2">10mm Pistol</a></li>
-                <li><a href="#" class="assault_rifle btn" data-rel="#img-3">Assault Rifle</a></li>
             </ul>
 
             <div class="item-stats">
@@ -78,7 +79,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="damage pull-right">48</div>
-                            <div class="pull-left">Damage</div>
+                            <div class="pull-left">Utility</div>
                         </div>
                     </div>
                 </div>
@@ -86,8 +87,18 @@
                 <div class="row-highlight">
                     <div class="row">
                         <div class="col-12">
-                            <div class="ammo pull-right">6</div>
-                            <div class="pull-left">Ammo</div>
+                            <div class="ammo pull-right">10</div>
+                            <div class="pull-left">Complexity</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="row-highlight">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="range pull-right">Yes</div>
+                            <div class="pull-left">Work in Progress</div>
                         </div>
                     </div>
                 </div>
@@ -95,42 +106,8 @@
                 <div class="row-highlight">
                     <div class="row">
                         <div class="col-12">
-                            <div class="fire_rate pull-right">6</div>
-                            <div class="pull-left">Fire Rate</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row-highlight">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="range pull-right">66</div>
-                            <div class="pull-left">Range</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row-highlight">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="accuracy pull-right">66</div>
-                            <div class="pull-left">Accuracy</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-highlight">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="weight pull-right">4.2</div>
-                            <div class="pull-left">Weight</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-highlight">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="value pull-right">99</div>
-                            <div class="pull-left">Value</div>
+                            <div class="fire_rate pull-right">0.1.2</div>
+                            <div class="pull-left">Version</div>
                         </div>
                     </div>
                 </div>
