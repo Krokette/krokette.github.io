@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Text Extractor</title>
+</head>
+<body>
+  <!-- HTML code to display file input and button -->
+  <input type="file" id="input" accept="video/*">
+  <button onclick="extractText()">Go</button>
+  <pre id="output"></pre>
+
+  <!-- Load Tesseract.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v3.0.10"></script>
+
+  <!-- JavaScript code to extract text from video -->
+  <script>
+    function extractText() {
+      // Get file input element
+      const input = document.getElementById("input");
+      
+      // Make sure a file was selected
+      if (input.files.length === 0) {
+        alert("No file selected");
+        return;
+      }
+      
+      // Create a FileReader object to read the uploaded file
+      const reader = new FileReader();
+      
+      // Initialize list to store extracted text
+      const textList = [];
+      
+      reader.onload = function(event) {
+        // Create an image element to hold the video frame
+        const img = new Image();
+        
+        img.onload = function() {
+          // Get canvas element to draw the image
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+          
+          // Set canvas size to the size of the image
+          canvas.width = img.width;
+          canvas.height = img.height;
+          
+          // Draw image onto canvas
+          context.drawImage(img, 0, 0);
+          
+          // Extract text from image using OCR
+          Tesseract.recognize(canvas, {
+            lang: "eng"
+          }).then(function(result) {
+            // Get extracted text from result
+            const text = result.text;
+            
+            // Only add text to list if it is not a duplicate
+            if (!textList.includes(text)) {
+              textList.push(text);
+            }
+            
+            // Check if there are more frames to process
+            if (reader.readyState === 2) {
+              // All frames have been processed
+              
+              // Join text list into a single string
+              const output = textList.join("\n");
+              
+              // Display extracted text
+              document.getElementById("output").textContent = output;
+            } else {
+              // Process next frame
+              img.src = reader.result;
+            }
+          });
+        };
+        
+        // Set image source to the first frame of the video
+        img.src = reader.result;
+      };
+      
+      // Read uploaded file as a Data URL
+      reader.readAsDataURL(input.files[0]);
+    }
+  </script>
+</body>
+</html>
